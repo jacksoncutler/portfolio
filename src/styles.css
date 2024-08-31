@@ -2,6 +2,20 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+
+  font-family: 'Fira Sans', sans-serif, serif;
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  --color-text: #312b1d;
+  --color-background: #fffaf3;
+  --color-primary: #e9b771;
+  --color-secondary: #b3bda5;
+  --color-accent: #c5c98a;
+  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 65%);
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 65%);
+
+  --border-radius: 0.4rem;
 }
 
 *,
@@ -14,11 +28,68 @@ html {
   margin: 0;
 }
 
+main {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
 img {
   display: block;
   max-width: 100%;
 }
 
-button {
+button,
+a.button {
   font: inherit;
+  border: none;
+  border-radius: var(--border-radius);
+  width: max-content;
+  padding-block: 1rem;
+  padding-inline: 3rem;
+}
+
+button:hover,
+a.button:hover {
+  cursor: pointer;
+  box-shadow: 0 24px 32px -24px;
+}
+
+a.button {
+  background-color: var(--color-primary-light);
+}
+
+a.button:link,
+a.button:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+.container {
+  width: max-content;
+  border: solid 5px var(--color-accent);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+button:nth-child(1) {
+  background-color: var(--color-primary);
+}
+
+button:nth-child(2) {
+  background-color: var(--color-primary-light);
+}
+
+button:nth-child(3) {
+  background-color: var(--color-secondary);
+}
+
+button:nth-child(4) {
+  background-color: var(--color-secondary-light);
 }
