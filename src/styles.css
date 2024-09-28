@@ -28,8 +28,38 @@ html {
   margin: 0;
 }
 
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 main {
   padding: 2rem;
+}
+
+header {
+  min-height: 4rem;
+  background-color: var(--color-primary-light);
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+
+footer {
+  min-height: 5rem;
+  color: var(--color-background);
+  background-color: var(--color-text);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 h1 {
@@ -66,6 +96,12 @@ a.button:visited {
   text-decoration: inherit;
   color: inherit;
   cursor: auto;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .container {
