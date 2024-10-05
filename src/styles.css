@@ -3,18 +3,29 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 
-  font-family: 'Fira Sans', sans-serif, serif;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background-color: var(--color-light);
 
-  --color-text: #312b1d;
-  --color-background: #fffaf3;
-  --color-primary: #e9b771;
-  --color-secondary: #b3bda5;
+  --font-header: 'Chivo', sans-serif, serif;
+  --font-body: 'Fira Sans', sans-serif, serif;
+
+  --fs-2xl: 3rem;
+  --fs-xl: 2rem;
+  --fs-lg: 1.5rem;
+  --fs-sm: 0.875rem;
+
+  --color-dark: #111413;
+  --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
+  --color-light: #f2f4f3;
+  --color-primary: #6bb48f;
+  --color-secondary: #a1c6ca;
   --color-accent: #c5c98a;
-  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 65%);
-  --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 65%);
+  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 75%);
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 75%);
 
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
   --border-radius: 0.4rem;
 }
 
@@ -26,12 +37,18 @@ html {
 
 * {
   margin: 0;
+  font: inherit;
 }
 
 ol,
 ul {
   list-style: none;
   padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 body {
@@ -41,12 +58,37 @@ body {
 }
 
 main {
-  padding: 2rem;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: var(--fs-2xl);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
 }
 
 header {
   min-height: 4rem;
-  background-color: var(--color-primary-light);
+  box-shadow: 0 0.5px 4px;
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -55,77 +97,112 @@ header {
 
 footer {
   min-height: 5rem;
-  color: var(--color-background);
-  background-color: var(--color-text);
+  color: var(--color-light);
+  background-color: var(--color-dark);
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-h1 {
-  font-size: 2rem;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button,
-a.button {
+.button {
   font: inherit;
+  font-weight: 500;
   border: none;
   border-radius: var(--border-radius);
   width: max-content;
+}
+
+.button.md {
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
+  font-size: var(--fs-sm);
+}
+
+.button.lg {
   padding-block: 1rem;
   padding-inline: 3rem;
 }
 
-button:hover,
-a.button:hover {
+.button:hover {
   cursor: pointer;
   box-shadow: 0 24px 32px -24px;
-}
-
-a.button {
-  background-color: var(--color-primary-light);
 }
 
 a.button:link,
 a.button:visited {
   text-decoration: inherit;
   color: inherit;
-  cursor: auto;
 }
 
 .navbar {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  gap: var(--spacing-md);
 }
 
 .container {
   width: max-content;
-  border: solid 5px var(--color-accent);
   border-radius: var(--border-radius);
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  background-color: var(--color-primary-light);
+  padding: var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-lg);
+  justify-content: space-between;
 }
 
-button:nth-child(1) {
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.project {
+  width: 24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.project-info > p {
+  color: var(--color-dark-greyed);
+}
+
+.project-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.project-links > a.button:nth-child(1) {
   background-color: var(--color-primary);
 }
 
-button:nth-child(2) {
-  background-color: var(--color-primary-light);
+.project-links > a.button:nth-child(2) {
+  background-color: var(--color-dark);
+  color: var(--color-light);
 }
 
-button:nth-child(3) {
+.contact {
+  background-color: var(--color-secondary-light);
+}
+
+.contact > a.button {
   background-color: var(--color-secondary);
 }
 
-button:nth-child(4) {
-  background-color: var(--color-secondary-light);
+.img-placeholder {
+  width: 300px;
+  height: 194px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary);
+}
+
+.project-img {
+  width: 300px;
+  height: 194px;
+  border-radius: var(--border-radius);
 }
