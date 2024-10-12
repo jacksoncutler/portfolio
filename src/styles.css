@@ -1,34 +1,3 @@
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-
-  font-family: var(--font-body);
-  color: var(--color-dark);
-  background-color: var(--color-light);
-
-  --font-header: 'Chivo', sans-serif, serif;
-  --font-body: 'Fira Sans', sans-serif, serif;
-
-  --fs-2xl: 3rem;
-  --fs-xl: 2rem;
-  --fs-lg: 1.5rem;
-  --fs-sm: 0.875rem;
-
-  --color-dark: #111413;
-  --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
-  --color-light: #f2f4f3;
-  --color-primary: #6bb48f;
-  --color-secondary: #a1c6ca;
-  --color-accent: #c5c98a;
-  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 75%);
-  --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 75%);
-
-  --spacing-md: 1rem;
-  --spacing-lg: 2rem;
-  --border-radius: 0.4rem;
-}
-
 *,
 *::before,
 *::after {
@@ -51,17 +20,81 @@ img {
   max-width: 100%;
 }
 
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background-color: var(--color-light);
+
+  scroll-behavior: smooth;
+
+  --font-header: 'Chivo', sans-serif, serif;
+  --font-body: 'Fira Sans', sans-serif, serif;
+
+  --fs-2xl: 3rem;
+  --fs-xl: 2rem;
+  --fs-lg: 1.5rem;
+  --fs-sm: 0.875rem;
+
+  --color-dark: #111413;
+  --color-light: #f2f4f3;
+  --color-primary: #6bb48f;
+  --color-secondary: #a1c6ca;
+  --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
+  --color-light-greyed: color-mix(in srgb, var(--color-light), #000 10%);
+  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 75%);
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 75%);
+
+  --spacing-header: 4rem;
+  --spacing-footer: 5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --border-radius: 0.4rem;
+}
+
 body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  min-height: var(--spacing-header);
+  box-shadow: 0 -1px 5px var(--color-dark);
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+}
+
 main {
+  margin-top: var(--spacing-header);
   padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
+}
+
+footer {
+  min-height: var(--spacing-footer);
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+section {
+  scroll-margin-top: var(--spacing-header);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
 }
 
 h1,
@@ -86,30 +119,18 @@ h3 {
   font-size: var(--fs-lg);
 }
 
-header {
-  min-height: 4rem;
-  box-shadow: 0 0.5px 4px;
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-}
-
-footer {
-  min-height: 5rem;
-  color: var(--color-light);
-  background-color: var(--color-dark);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+a:link,
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
 }
 
 .button {
-  font: inherit;
   font-weight: 500;
   border: none;
   border-radius: var(--border-radius);
   width: max-content;
+  transition: all 0.3s ease;
 }
 
 .button.md {
@@ -125,13 +146,14 @@ footer {
 
 .button:hover {
   cursor: pointer;
-  box-shadow: 0 24px 32px -24px;
 }
 
-a.button:link,
-a.button:visited {
-  text-decoration: inherit;
-  color: inherit;
+.button.md:hover {
+  box-shadow: 0 0.375rem 1.25rem -0.75rem var(--color-dark);
+}
+
+.button.lg:hover {
+  box-shadow: 0 0.625rem 2rem -1.25rem var(--color-dark);
 }
 
 .navbar {
@@ -160,6 +182,7 @@ a.button:visited {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: var(--spacing-md);
 }
 
 .project-info {
@@ -175,6 +198,7 @@ a.button:visited {
 .project-links {
   display: flex;
   gap: var(--spacing-md);
+  align-items: end;
 }
 
 .project-links > a.button:nth-child(1) {
