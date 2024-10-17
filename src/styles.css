@@ -56,12 +56,6 @@ html {
   --border-radius: 0.4rem;
 }
 
-body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -72,6 +66,7 @@ header {
   flex-direction: row;
   justify-content: end;
   align-items: center;
+  padding-inline: var(--spacing-lg);
 }
 
 main {
@@ -90,9 +85,11 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-inline: var(--spacing-lg);
 }
 
 section {
+  padding-top: var(--spacing-lg);
   scroll-margin-top: var(--spacing-header);
   display: flex;
   flex-direction: column;
@@ -128,11 +125,12 @@ a:visited {
 }
 
 .button {
-  font-weight: 500;
+  width: max-content;
   border: none;
   border-radius: var(--border-radius);
-  width: max-content;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  background-color: var(--color-primary);
+  transition: all 0.2s ease;
 }
 
 .button.md {
@@ -158,11 +156,6 @@ a:visited {
   box-shadow: 0 0.625rem 2rem -1.25rem var(--color-dark);
 }
 
-.navbar {
-  display: flex;
-  gap: var(--spacing-md);
-}
-
 .container {
   width: max-content;
   border-radius: var(--border-radius);
@@ -173,12 +166,21 @@ a:visited {
   justify-content: space-between;
 }
 
+.navbar {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.navbar > a > li {
+  font-weight: 500;
+}
+
 .header-spacer {
   height: var(--spacing-header);
   background-color: var(--color-primary-light);
 }
 
-.hero {
+.hero-section {
   min-height: 20vh;
   background-color: var(--color-primary-light);
 }
@@ -229,12 +231,11 @@ a:visited {
   color: var(--color-light);
 }
 
-.contact {
-  background-color: var(--color-secondary-light);
-}
-
-.contact > a.button {
-  background-color: var(--color-secondary);
+.contact-section {
+  margin-top: var(--spacing-lg);
+  width: 100%;
+  background-color: var(--color-primary-light);
+  padding-bottom: var(--spacing-lg);
 }
 
 .img-placeholder {
