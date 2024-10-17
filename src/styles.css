@@ -48,10 +48,11 @@ html {
   --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 75%);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 75%);
 
-  --spacing-header: 4rem;
-  --spacing-footer: 5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
+  --spacing-header: 4rem;
+  --spacing-footer: 5rem;
+  --spacing-wave: 200px;
   --border-radius: 0.4rem;
 }
 
@@ -74,11 +75,12 @@ header {
 }
 
 main {
-  margin-top: var(--spacing-header);
-  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+}
+
+main > section {
+  padding-inline: var(--spacing-lg);
 }
 
 footer {
@@ -169,6 +171,23 @@ a:visited {
   display: flex;
   gap: var(--spacing-lg);
   justify-content: space-between;
+}
+
+.header-spacer {
+  height: var(--spacing-header);
+  background-color: var(--color-primary-light);
+}
+
+.hero {
+  min-height: 20vh;
+  background-color: var(--color-primary-light);
+}
+
+.bg-wave {
+  height: var(--spacing-wave);
+  background-image: url('./assets/bg-wave.svg');
+  background-size: 100% 100%;
+  z-index: -1;
 }
 
 .project-list {
