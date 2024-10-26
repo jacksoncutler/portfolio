@@ -34,7 +34,7 @@ html {
   --font-header: 'Chivo', sans-serif, serif;
   --font-body: 'Fira Sans', sans-serif, serif;
 
-  --fs-2xl: 4rem;
+  --fs-2xl: 5rem;
   --fs-xl: 2.75rem;
   --fs-lg: 1.75rem;
   --fs-lg-mob: 1.5rem;
@@ -56,6 +56,7 @@ html {
   --spacing-header: 4rem;
   --spacing-footer: 5rem;
   --spacing-wave: 200px;
+  --spacing-svg: 10rem;
   --border-radius: 0.4rem;
 }
 
@@ -190,6 +191,19 @@ a:visited {
   background-color: var(--color-primary-light);
 }
 
+.hero-title {
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+.desk-img {
+  width: 50%;
+  height: var(--spacing-svg);
+  background-image: url('./assets/desk.svg');
+  background-size: 100% 100%;
+  align-self: flex-end;
+}
+
 .bg-wave {
   height: var(--spacing-wave);
   background-image: url('./assets/bg-wave.svg');
@@ -238,13 +252,6 @@ a:visited {
   color: var(--color-light);
 }
 
-.contact-section {
-  margin-top: var(--spacing-lg);
-  width: 100%;
-  background-color: var(--color-primary-light);
-  padding-bottom: var(--spacing-lg);
-}
-
 .img-placeholder {
   width: 300px;
   height: 194px;
@@ -258,9 +265,30 @@ a:visited {
   border-radius: var(--border-radius);
 }
 
+.contact-section {
+  margin-top: var(--spacing-lg);
+  width: 100%;
+  background-color: var(--color-primary-light);
+  padding-bottom: var(--spacing-lg);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.coffee-img {
+  width: 50%;
+  height: var(--spacing-svg);
+  background-image: url('./assets/coffee.svg');
+  background-size: 100% 100%;
+}
+
 @media (max-width: 675px) {
   html {
-    --fs-2xl: 3.5rem;
+    --fs-2xl: 3.75rem;
     --fs-xl: 2.25rem;
   }
 
@@ -273,6 +301,15 @@ a:visited {
     gap: var(--spacing-md);
   }
 
+  .hero-title {
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
+
+  .bg-wave {
+    background-size: 170% 100%;
+  }
+
   .project-img {
     min-width: auto;
     height: auto;
@@ -281,6 +318,44 @@ a:visited {
   .img-placeholder {
     width: 100%;
     min-width: auto;
+  }
+
+  .coffee-img {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 410px) {
+  html {
+    --fs-2xl: 3.5rem;
+  }
+
+  header {
+    justify-content: center;
+  }
+
+  .navbar {
+    gap: var(--spacing-lg);
+  }
+
+  .hero-title {
+    padding-top: 0;
+    padding-left: 0;
+    align-self: center;
+  }
+
+  .desk-img {
+    width: 100%;
+    align-self: center;
+  }
+
+  .contact-section > .container {
+    align-items: center;
+  }
+
+  .coffee-img {
+    align-self: auto;
+    width: var(--spacing-svg);
   }
 }
 
