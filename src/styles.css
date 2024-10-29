@@ -44,12 +44,12 @@ html {
 
   --color-dark: #111413;
   --color-light: #f2f4f3;
-  --color-primary: #85bf9b;
-  --color-secondary: #dcbe65;
+  --color-primary: #929fb8;
+  --color-secondary: #f8d86f;
   --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
   --color-light-greyed: color-mix(in srgb, var(--color-light), #000 10%);
-  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 75%);
-  --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 75%);
+  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 80%);
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 50%);
 
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
@@ -65,8 +65,8 @@ header {
   z-index: 2;
   width: 100%;
   min-height: var(--spacing-header);
-  box-shadow: 0 -1px 5px var(--color-dark);
-  background-color: var(--color-primary);
+  box-shadow: 0 -8px 9px var(--color-dark);
+  background-color: var(--color-primary-light);
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -120,7 +120,7 @@ span {
 .title-span::after {
   content: '';
   position: absolute;
-  inset: 0.75em -0.25em 0 0;
+  inset: 0.8em -0.1em 0 0.04em;
   z-index: -1;
   background-color: var(--color-secondary);
 }
@@ -202,7 +202,7 @@ a:visited {
 }
 
 .hero {
-  min-height: 50vh;
+  min-height: 55vh;
   background-color: var(--color-primary-light);
   gap: 4rem;
 }
