@@ -183,6 +183,10 @@ a:visited {
   justify-content: space-between;
 }
 
+.svg-symbols {
+  display: none;
+}
+
 .navbar {
   display: flex;
   gap: var(--spacing-md);
@@ -200,7 +204,6 @@ a:visited {
 .hero {
   min-height: 50vh;
   background-color: var(--color-primary-light);
-  /* padding-bottom: 2rem; */
   gap: 4rem;
 }
 
@@ -212,7 +215,7 @@ a:visited {
 .desk-img {
   width: 50%;
   height: var(--spacing-svg);
-  background-image: url('./assets/desk.svg');
+  background-image: url('./assets/art-desk.svg');
   background-size: 100% 100%;
   align-self: flex-end;
 }
@@ -229,9 +232,40 @@ a:visited {
 }
 
 .toolbelt {
-  height: 150px;
-  background-color: var(--color-primary);
   margin-inline: -2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--color-primary);
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tool > svg {
+  width: 100px;
+  height: 100px;
+  fill: var(--color-light);
+  transition: all 0.2s ease;
+}
+
+.tool:hover > svg {
+  fill: var(--color-secondary);
+}
+
+.tool > h4 {
+  color: var(--color-light);
+  transition: all 0.2s ease;
+}
+
+.tool:hover > h4 {
+  color: var(--color-secondary);
 }
 
 .project-list {
@@ -305,7 +339,7 @@ a:visited {
 .coffee-img {
   width: 50%;
   height: var(--spacing-svg);
-  background-image: url('./assets/coffee.svg');
+  background-image: url('./assets/art-coffee.svg');
   background-size: 100% 100%;
 }
 
@@ -358,7 +392,7 @@ a:visited {
   }
 
   .navbar {
-    gap: var(--spacing-lg);
+    gap: 1.5rem;
   }
 
   .hero-title {
