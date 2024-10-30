@@ -53,9 +53,10 @@ html {
 
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
+  --spacing-xlg: 5rem;
   --spacing-header: 4rem;
   --spacing-footer: 5rem;
-  --spacing-wave: 25vh;
+  --spacing-wave: 20vh;
   --spacing-svg: 10rem;
   --border-radius: 0.4rem;
 }
@@ -202,9 +203,10 @@ a:visited {
 }
 
 .hero {
-  min-height: 55vh;
+  min-height: 60vh;
   background-color: var(--color-primary-light);
-  gap: 4rem;
+  gap: var(--spacing-xlg);
+  padding-bottom: var(--spacing-xlg);
 }
 
 .hero-title {
@@ -221,10 +223,21 @@ a:visited {
 }
 
 .bg-wave {
+  margin-bottom: var(--spacing-xlg);
   height: var(--spacing-wave);
   background-image: url('./assets/bg-wave.svg');
   background-size: 100% 100%;
   z-index: -1;
+}
+
+.bg-wave.inverse {
+  margin-bottom: 0;
+  margin-top: var(--spacing-xlg);
+  height: var(--spacing-wave);
+  background-image: url('./assets/bg-wave.svg');
+  background-size: 100% 100%;
+  z-index: -1;
+  transform: rotate(180deg);
 }
 
 .tools {
@@ -323,9 +336,9 @@ a:visited {
 }
 
 .contact {
-  margin-top: var(--spacing-lg);
   width: 100%;
   background-color: var(--color-primary-light);
+  /* padding-top: 0; */
   padding-bottom: var(--spacing-lg);
 }
 
@@ -363,7 +376,8 @@ a:visited {
     padding-left: 1rem;
   }
 
-  .bg-wave {
+  .bg-wave,
+  .bg-wave.inverse {
     background-size: 170% 100%;
   }
 
@@ -393,6 +407,10 @@ a:visited {
 
   .navbar {
     gap: 1.5rem;
+  }
+
+  .hero {
+    gap: var(--spacing-lg);
   }
 
   .hero-title {
