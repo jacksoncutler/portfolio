@@ -336,21 +336,31 @@ a:visited {
 }
 
 .contact {
-  width: 100%;
   background-color: var(--color-primary-light);
-  /* padding-top: 0; */
   padding-bottom: var(--spacing-lg);
 }
 
+.contact-grid {
+  width: 100%;
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-areas: 
+    'one two'
+    'three none';
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md);
+}
+
 .contact-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: var(--spacing-md);
+  grid-area: one;
+}
+
+.contact-button {
+  grid-area: three;
 }
 
 .coffee-img {
-  width: 50%;
+  grid-area: two;
   height: var(--spacing-svg);
   background-image: url('./assets/art-coffee.svg');
   background-size: 100% 100%;
@@ -390,13 +400,9 @@ a:visited {
     width: 100%;
     min-width: auto;
   }
-
-  .coffee-img {
-    align-self: flex-end;
-  }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 460px) {
   html {
     --fs-2xl: 3.5rem;
   }
@@ -424,13 +430,16 @@ a:visited {
     align-self: center;
   }
 
-  .contact > .container {
-    align-items: center;
+  .contact-grid {
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+      'two'
+      'one'
+      'three';
   }
 
-  .coffee-img {
-    align-self: auto;
-    width: var(--spacing-svg);
+  .contact-button {
+    margin-inline: auto;
   }
 }
 
