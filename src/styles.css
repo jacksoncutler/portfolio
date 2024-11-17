@@ -53,7 +53,7 @@ html {
 
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
-  --spacing-xlg: 5rem;
+  --spacing-xlg: 6rem;
   --spacing-header: 4rem;
   --spacing-footer: 5rem;
   --spacing-wave: 20vh;
@@ -148,8 +148,8 @@ a:visited {
 }
 
 .button.lg {
-  padding-block: 1rem;
-  padding-inline: 3rem;
+  padding-block: 0.75rem;
+  padding-inline: 2rem;
 }
 
 .button:hover {
@@ -161,7 +161,7 @@ a:visited {
 }
 
 .button.lg:hover {
-  box-shadow: 0 0.625rem 2rem -1.25rem var(--color-dark);
+  box-shadow: 0 0.5rem 1.6rem -1rem var(--color-dark);
 }
 
 .section {
@@ -205,17 +205,35 @@ a:visited {
 .hero {
   min-height: 60vh;
   background-color: var(--color-primary-light);
-  gap: var(--spacing-xlg);
   padding-bottom: var(--spacing-xlg);
 }
 
+.hero-grid {
+  width: 100%;
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-areas:
+    'one one'
+    'two three';
+  gap: var(--spacing-xlg) var(--spacing-lg);
+}
+
 .hero-title {
+  grid-area: one;
   padding-top: 2rem;
   padding-left: 2rem;
 }
 
+.hero-desc {
+  grid-area: two;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  font-size: var(--fs-lg);
+}
+
 .desk-img {
-  width: 50%;
+  grid-area: three;
+  width: 100%;
   height: var(--spacing-svg);
   background-image: url('./assets/art-desk.svg');
   background-size: 100% 100%;
@@ -344,9 +362,9 @@ a:visited {
   width: 100%;
   display: grid;
   grid-auto-columns: 1fr 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     'one two'
-    'three none';
+    'three three';
   gap: var(--spacing-lg);
   padding: var(--spacing-md);
 }
@@ -355,8 +373,11 @@ a:visited {
   grid-area: one;
 }
 
-.contact-button {
+.contact-links {
   grid-area: three;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
 }
 
 .coffee-img {
@@ -368,7 +389,6 @@ a:visited {
 
 @media (max-width: 675px) {
   html {
-    --fs-2xl: 3.75rem;
     --fs-xl: 2.25rem;
   }
 
@@ -381,9 +401,26 @@ a:visited {
     gap: var(--spacing-md);
   }
 
+  .hero-grid {
+    grid-auto-columns: 0.5fr 1fr;
+    grid-template-areas:
+      'one one'
+      '. three'
+      '. two';
+    gap: var(--spacing-lg) var(--spacing-md);
+  }
+
   .hero-title {
     padding-top: 1rem;
     padding-left: 1rem;
+  }
+
+  .hero-desc {
+    padding-block: 0;
+  }
+
+  .desk-img {
+    margin-top: var(--spacing-md);
   }
 
   .bg-wave,
@@ -400,11 +437,18 @@ a:visited {
     width: 100%;
     min-width: auto;
   }
+
+  .contact-grid {
+    grid-template-areas:
+      'one two'
+      'three three';
+  }
 }
 
 @media (max-width: 460px) {
   html {
-    --fs-2xl: 3.5rem;
+    --fs-2xl: 4.25rem;
+    --fs-lg: 1.5rem;
   }
 
   header {
@@ -415,14 +459,27 @@ a:visited {
     gap: 1.5rem;
   }
 
-  .hero {
+  .hero-grid {
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+      'one'
+      'three'
+      'two';
     gap: var(--spacing-lg);
   }
 
   .hero-title {
-    padding-top: 0;
-    padding-left: 0;
-    align-self: center;
+    padding-top: 1rem;
+    padding-inline: var(--spacing-md);
+  }
+
+  .hero-desc {
+    font-size: var(--fs-lg);
+    padding-inline: var(--spacing-md);
+  }
+
+  .desk-img {
+    margin-top: var(--spacing-md);
   }
 
   .desk-img {
@@ -432,7 +489,7 @@ a:visited {
 
   .contact-grid {
     grid-auto-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       'two'
       'one'
       'three';
