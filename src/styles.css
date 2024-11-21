@@ -340,16 +340,9 @@ a:visited {
   color: var(--color-light);
 }
 
-.img-placeholder {
-  width: 300px;
-  height: 194px;
-  border-radius: var(--border-radius);
-  background-color: var(--color-primary);
-}
-
 .project-img {
   min-width: 300px;
-  height: 194px;
+  height: 186px;
   border-radius: var(--border-radius);
 }
 
@@ -431,11 +424,6 @@ a:visited {
   .project-img {
     min-width: auto;
     height: auto;
-  }
-
-  .img-placeholder {
-    width: 100%;
-    min-width: auto;
   }
 
   .contact-grid {
