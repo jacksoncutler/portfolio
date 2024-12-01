@@ -236,15 +236,19 @@ a.button.lg:hover {
 
 .hero-title {
   grid-area: one;
-  padding-top: 2rem;
-  padding-left: 2rem;
 }
 
 .hero-desc {
   grid-area: two;
-  padding-top: 2rem;
-  padding-left: 2rem;
+  font-family: var(--font-body);
+  font-weight: 500;
   font-size: var(--fs-lg-200);
+}
+
+.hero-title,
+.hero-desc {
+  padding-top: 4rem;
+  padding-left: 4rem;
 }
 
 .desk-img {
@@ -376,11 +380,6 @@ a.button.lg:hover {
 }
 
 .contact-text {
-  container-type: inline-size;
-  grid-area: one;
-}
-
-.contact-text > p {
   font-size: var(--fs-md-300);
 }
 
@@ -406,6 +405,12 @@ a.button.lg:hover {
   .hero-grid,
   .contact-grid {
     grid-auto-columns: 1fr 1fr;
+  }
+
+  .hero-title,
+  .hero-desc {
+    padding-top: 2rem;
+    padding-left: 2rem;
   }
 
   .contact {
@@ -526,8 +531,7 @@ a.button.lg:hover {
     font-size: var(--fs-lg-200);
   }
 
-  .project-info > p,
-  .contact-text > p {
+  .project-info > p {
     font-size: var(--fs-md-200);
   }
 }
@@ -537,8 +541,7 @@ a.button.lg:hover {
     font-size: var(--fs-lg-100);
   }
 
-  .project-info > p,
-  .contact-text > p {
+  .project-info > p {
     font-size: var(--fs-md-100);
   }
 }
