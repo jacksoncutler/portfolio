@@ -58,9 +58,10 @@ html {
   --spacing-lg: 2rem;
   --spacing-xlg: 6rem;
   --spacing-header: 4rem;
-  --spacing-footer: 5rem;
+  --spacing-footer: 6rem;
   --spacing-wave: 20vh;
   --spacing-svg: 10rem;
+  --spacing-link-icon: 1.25rem;
   --border-radius: 0.4rem;
 }
 
@@ -89,6 +90,7 @@ footer {
   background-color: var(--color-dark);
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   padding-inline: var(--spacing-lg);
 }
@@ -131,18 +133,15 @@ span {
   position: relative;
 }
 
-.title-span::after {
-  content: '';
-  position: absolute;
-  inset: 0.8em -0.1em 0 0.04em;
-  z-index: -1;
-  background-color: var(--color-secondary);
-}
-
 a:link,
 a:visited {
   text-decoration: inherit;
   color: inherit;
+}
+
+a.button:link,
+a.button:visited {
+  text-decoration: inherit;
 }
 
 a.button {
@@ -177,6 +176,14 @@ a.button.md:hover {
 
 a.button.lg:hover {
   box-shadow: 0 0.5rem 1.6rem -1rem var(--color-dark);
+}
+
+.title-span::after {
+  content: '';
+  position: absolute;
+  inset: 0.8em -0.1em 0 0.04em;
+  z-index: -1;
+  background-color: var(--color-secondary);
 }
 
 .section {
@@ -395,6 +402,18 @@ a.button.lg:hover {
   height: var(--spacing-svg);
   background-image: url('./assets/art-coffee.svg');
   background-size: 100% 100%;
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-img {
+  height: var(--spacing-link-icon);
+  border-radius: var(--border-radius);
 }
 
 @media (max-width: 1400px) {
