@@ -352,6 +352,10 @@ a.button.lg:hover {
   color: var(--color-dark-greyed);
 }
 
+.project-tools {
+  font-weight: 300;
+}
+
 .project-links {
   display: flex;
   flex-wrap: wrap;
