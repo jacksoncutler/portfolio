@@ -50,8 +50,8 @@ html {
   --color-secondary: #f8d86f;
   --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
   --color-light-greyed: color-mix(in srgb, var(--color-light), #000 10%);
-  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 83%);
-  --color-primary-light-2: color-mix(in srgb, var(--color-primary), #fff 88%);
+  --color-primary-light-200: color-mix(in srgb, var(--color-primary), #fff 83%);
+  --color-primary-light-100: color-mix(in srgb, var(--color-primary), #fff 88%);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 50%);
 
   --spacing-md: 1rem;
@@ -71,7 +71,7 @@ header {
   width: 100%;
   min-height: var(--spacing-header);
   box-shadow: 0 -8px 9px var(--color-dark);
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light-200);
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -149,7 +149,7 @@ a.button {
   border: none;
   border-radius: var(--border-radius);
   font-weight: 500;
-  color: var(--color-primary-light-2);
+  color: var(--color-primary-light-100);
   background-color: var(--color-primary);
   transition: all 0.2s ease;
 }
@@ -199,7 +199,7 @@ a.button.lg:hover {
   width: 100%;
   max-width: 75%;
   border-radius: var(--border-radius);
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light-200);
   padding: var(--spacing-md);
   display: flex;
   gap: var(--spacing-lg);
@@ -222,12 +222,12 @@ a.button.lg:hover {
 
 .header-spacer {
   height: var(--spacing-header);
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light-200);
 }
 
 .hero {
   min-height: 60vh;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light-200);
   padding-bottom: var(--spacing-xlg);
 }
 
@@ -254,7 +254,7 @@ a.button.lg:hover {
 
 .hero-title,
 .hero-desc {
-  padding-top: 4rem;
+  padding-top: 2rem;
   padding-left: 4rem;
 }
 
@@ -309,7 +309,7 @@ a.button.lg:hover {
 .tool > svg {
   width: 100px;
   height: 100px;
-  fill: var(--color-primary-light-2);
+  fill: var(--color-primary-light-100);
   transition: all 0.2s ease;
 }
 
@@ -374,7 +374,7 @@ a.button.lg:hover {
 }
 
 .contact {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light-200);
   padding-top: var(--spacing-xlg);
   padding-bottom: var(--spacing-lg);
 }
@@ -432,7 +432,6 @@ a.button.lg:hover {
 
   .hero-title,
   .hero-desc {
-    padding-top: 2rem;
     padding-left: 2rem;
   }
 
