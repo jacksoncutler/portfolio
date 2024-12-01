@@ -115,6 +115,14 @@ h3 {
   font-size: var(--fs-lg);
 }
 
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
 span {
   position: relative;
 }
@@ -185,6 +193,7 @@ a.button.lg:hover {
   display: flex;
   gap: var(--spacing-lg);
   justify-content: space-between;
+  align-items: center;
 }
 
 .svg-symbols {
