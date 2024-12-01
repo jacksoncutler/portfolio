@@ -44,11 +44,12 @@ html {
 
   --color-dark: #111413;
   --color-light: #f2f4f3;
-  --color-primary: #929fb8;
+  --color-primary: #8592a9;
   --color-secondary: #f8d86f;
   --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
   --color-light-greyed: color-mix(in srgb, var(--color-light), #000 10%);
-  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 80%);
+  --color-primary-light: color-mix(in srgb, var(--color-primary), #fff 83%);
+  --color-primary-light-2: color-mix(in srgb, var(--color-primary), #fff 88%);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 50%);
 
   --spacing-md: 1rem;
@@ -132,35 +133,37 @@ a:visited {
   color: inherit;
 }
 
-.button {
+a.button {
   width: max-content;
   border: none;
   border-radius: var(--border-radius);
   font-weight: 500;
+  color: var(--color-primary-light-2);
   background-color: var(--color-primary);
   transition: all 0.2s ease;
 }
 
-.button.md {
+a.button.md {
   padding-block: 0.5rem;
   padding-inline: 1.5rem;
   font-size: var(--fs-sm);
 }
 
-.button.lg {
+a.button.lg {
   padding-block: 0.75rem;
   padding-inline: 2rem;
 }
 
-.button:hover {
+a.button:hover {
   cursor: pointer;
+  color: var(--color-light);
 }
 
-.button.md:hover {
+a.button.md:hover {
   box-shadow: 0 0.375rem 1.25rem -0.75rem var(--color-dark);
 }
 
-.button.lg:hover {
+a.button.lg:hover {
   box-shadow: 0 0.5rem 1.6rem -1rem var(--color-dark);
 }
 
@@ -282,7 +285,7 @@ a:visited {
 .tool > svg {
   width: 100px;
   height: 100px;
-  fill: var(--color-light);
+  fill: var(--color-primary-light-2);
   transition: all 0.2s ease;
 }
 
@@ -331,13 +334,8 @@ a:visited {
   align-items: end;
 }
 
-.project-links > a.button:nth-child(1) {
-  background-color: var(--color-primary);
-}
-
 .project-links > a.button:nth-child(2) {
   background-color: var(--color-dark);
-  color: var(--color-light);
 }
 
 .project-img {
