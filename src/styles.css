@@ -260,7 +260,7 @@ a.button.lg:hover {
 
 .desk-img {
   grid-area: three;
-  width: 80%;
+  width: 90%;
   height: var(--spacing-svg);
   background-image: url('./assets/art-desk.svg');
   background-size: 100% 100%;
@@ -404,7 +404,7 @@ a.button.lg:hover {
 .coffee-img {
   grid-area: two;
   height: var(--spacing-svg);
-  width: 60%;
+  width: 65%;
   background-image: url('./assets/art-coffee.svg');
   background-size: 100% 100%;
 }
