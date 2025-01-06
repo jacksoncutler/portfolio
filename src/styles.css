@@ -345,14 +345,23 @@ a.button.lg:hover {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+  font-size: var(--fs-md-200);
 }
 
 .project-info > p {
-  font-size: var(--fs-md-300);
   color: var(--color-dark-greyed);
 }
 
+.project-info > h3 {
+  font-size: 1.8em;
+}
+
+.project-description {
+  font-size: 1em;
+}
+
 .project-tools {
+  font-size: 0.9em;
   font-weight: 300;
 }
 
@@ -558,21 +567,13 @@ a.button.lg:hover {
 }
 
 @container (max-width: 550px) {
-  h3 {
-    font-size: var(--fs-lg-200);
-  }
-
-  .project-info > p {
-    font-size: var(--fs-md-200);
+  .project-info {
+    font-size: 0.925rem;
   }
 }
 
 @container (max-width: 350px) {
-  h3 {
-    font-size: var(--fs-lg-100);
-  }
-
-  .project-info > p {
-    font-size: var(--fs-md-100);
+  .project-info {
+    font-size: 0.85rem;
   }
 }
