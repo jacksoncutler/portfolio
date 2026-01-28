@@ -50,8 +50,9 @@ html {
   --color-secondary: #f8d86f;
   --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
   --color-light-greyed: color-mix(in srgb, var(--color-light), #000 10%);
-  --color-primary-light-200: color-mix(in srgb, var(--color-primary), #fff 83%);
   --color-primary-light-100: color-mix(in srgb, var(--color-primary), #fff 88%);
+  --color-primary-light-200: color-mix(in srgb, var(--color-primary), #fff 83%);
+  --color-primary-light-300: color-mix(in srgb, var(--color-primary), #fff 72%);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 50%);
 
   --spacing-md: 1rem;
@@ -211,6 +212,14 @@ a.button.lg:hover {
   display: none;
 }
 
+.fillable.shade {
+  fill: var(--color-primary-light-300);
+}
+
+.fillable.main {
+  fill: var(--color-primary-light-200);
+}
+
 .navbar {
   display: flex;
   gap: var(--spacing-md);
@@ -266,21 +275,18 @@ a.button.lg:hover {
   background-size: 100% 100%;
 }
 
-.bg-wave {
+.bg-wave-container {
   margin-bottom: var(--spacing-xlg);
   height: var(--spacing-wave);
-  background-image: url('./assets/bg-wave.svg');
-  background-size: 100% 100%;
   z-index: -1;
+  svg {
+    width: 100%;
+  }
 }
 
-.bg-wave.inverse {
+.bg-wave-container.inverse {
   margin-bottom: 0;
   margin-top: var(--spacing-xlg);
-  height: var(--spacing-wave);
-  background-image: url('./assets/bg-wave.svg');
-  background-size: 100% 100%;
-  z-index: -1;
   transform: rotate(180deg);
 }
 
@@ -490,11 +496,6 @@ a.button.lg:hover {
 
   .desk-img {
     margin-top: var(--spacing-md);
-  }
-
-  .bg-wave,
-  .bg-wave.inverse {
-    background-size: 170% 100%;
   }
 
   .project-img {
