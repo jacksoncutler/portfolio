@@ -27,7 +27,7 @@ html {
 
   font-family: var(--font-body);
   color: var(--color-dark);
-  background-color: var(--color-light);
+  background-color: var(--color-primary-tint);
 
   scroll-behavior: smooth;
 
@@ -45,14 +45,13 @@ html {
   --fs-sm: 0.875rem;
 
   --color-dark: #111413;
-  --color-light: #f2f4f3;
-  --color-primary: #8592a9;
-  --color-secondary: #f8d86f;
+  --color-light: #e5e5e5;
+  --color-primary: #7d82b8;
+  --color-secondary: #ef9606;
   --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
   --color-light-greyed: color-mix(in srgb, var(--color-light), #000 10%);
-  --color-primary-light-100: color-mix(in srgb, var(--color-primary), #fff 88%);
-  --color-primary-light-200: color-mix(in srgb, var(--color-primary), #fff 83%);
-  --color-primary-light-300: color-mix(in srgb, var(--color-primary), #fff 72%);
+  --color-primary-tint: color-mix(in srgb, var(--color-primary), #fff 45%);
+  --color-primary-shade: color-mix(in srgb, var(--color-primary), #000 10%);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 50%);
 
   --spacing-md: 1rem;
@@ -66,13 +65,46 @@ html {
   --border-radius: 0.4rem;
 }
 
+/* THEME COLORS */
+
+header,
+.hero,
+.container,
+.header-spacer,
+.contact {
+  background-color: var(--color-light);
+}
+
+.title-underline::after,
+.toolbelt,
+a.button {
+  background-color: var(--color-primary);
+}
+
+.title-underline.lg::after {
+  background-color: var(--color-primary-tint);
+}
+
+a.button.action {
+  background-color: var(--color-secondary);
+}
+
+.fillable.shade {
+  fill: var(--color-primary);
+}
+
+.fillable.main {
+  fill: var(--color-light);
+}
+
+/* FORMATTING */
+
 header {
   position: fixed;
   z-index: 2;
   width: 100%;
   min-height: var(--spacing-header);
   box-shadow: 0 -8px 9px var(--color-dark);
-  background-color: var(--color-primary-light-200);
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -150,8 +182,7 @@ a.button {
   border: none;
   border-radius: var(--border-radius);
   font-weight: 500;
-  color: var(--color-primary-light-100);
-  background-color: var(--color-primary);
+  color: var(--color-light);
   transition: all 0.2s ease;
 }
 
@@ -179,12 +210,11 @@ a.button.lg:hover {
   box-shadow: 0 0.5rem 1.6rem -1rem var(--color-dark);
 }
 
-.title-span::after {
+.title-underline::after {
   content: '';
   position: absolute;
   inset: 0.8em -0.1em 0 0.04em;
   z-index: -1;
-  background-color: var(--color-secondary);
 }
 
 .section {
@@ -200,7 +230,6 @@ a.button.lg:hover {
   width: 100%;
   max-width: 75%;
   border-radius: var(--border-radius);
-  background-color: var(--color-primary-light-200);
   padding: var(--spacing-md);
   display: flex;
   gap: var(--spacing-lg);
@@ -210,14 +239,6 @@ a.button.lg:hover {
 
 .svg-symbols {
   display: none;
-}
-
-.fillable.shade {
-  fill: var(--color-primary-light-300);
-}
-
-.fillable.main {
-  fill: var(--color-primary-light-200);
 }
 
 .navbar {
@@ -231,12 +252,10 @@ a.button.lg:hover {
 
 .header-spacer {
   height: var(--spacing-header);
-  background-color: var(--color-primary-light-200);
 }
 
 .hero {
   min-height: 60vh;
-  background-color: var(--color-primary-light-200);
   padding-bottom: var(--spacing-xlg);
 }
 
@@ -302,7 +321,6 @@ a.button.lg:hover {
   justify-content: space-around;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
-  background-color: var(--color-primary);
 }
 
 .tool {
@@ -314,7 +332,7 @@ a.button.lg:hover {
 .tool > svg {
   width: 100px;
   height: 100px;
-  fill: var(--color-primary-light-100);
+  fill: var(--color-light);
   transition: all 0.2s ease;
 }
 
@@ -377,10 +395,6 @@ a.button.lg:hover {
   align-items: end;
 }
 
-.project-links > a.button:nth-child(2) {
-  background-color: var(--color-dark);
-}
-
 .project-img {
   min-width: 300px;
   height: 186px;
@@ -388,7 +402,6 @@ a.button.lg:hover {
 }
 
 .contact {
-  background-color: var(--color-primary-light-200);
   padding-top: var(--spacing-xlg);
   padding-bottom: var(--spacing-lg);
 }
