@@ -339,20 +339,10 @@ a.button.lg:hover {
   width: 100px;
   height: 100px;
   fill: var(--color-light);
-  transition: all 0.2s ease;
-}
-
-.tool:hover > svg {
-  fill: var(--color-secondary);
 }
 
 .tool > h4 {
   color: var(--color-light);
-  transition: all 0.2s ease;
-}
-
-.tool:hover > h4 {
-  color: var(--color-secondary);
 }
 
 .project-list {
