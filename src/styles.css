@@ -48,17 +48,19 @@ html {
   --color-light: #e5e5e5;
   --color-primary: #7d82b8;
   --color-secondary: #ef9606;
-  --color-dark-greyed: color-mix(in srgb, var(--color-dark), #fff 10%);
-  --color-light-greyed: color-mix(in srgb, var(--color-light), #000 10%);
+  --color-light-tint: color-mix(in srgb, var(--color-light), #fff 10%);
+  --color-dark-tint: color-mix(in srgb, var(--color-dark), #fff 10%);
   --color-primary-tint: color-mix(in srgb, var(--color-primary), #fff 45%);
   --color-primary-shade: color-mix(in srgb, var(--color-primary), #000 10%);
   --color-secondary-light: color-mix(in srgb, var(--color-secondary), #fff 50%);
 
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
-  --spacing-xlg: 6rem;
+  --spacing-xl: 8rem;
+  --spacing-2xl: 16rem;
   --spacing-header: 4rem;
   --spacing-footer: 6rem;
+  --spacing-margins: 18rem;
   --spacing-wave: 20vh;
   --spacing-svg: 10rem;
   --spacing-link-icon: 1.25rem;
@@ -223,12 +225,19 @@ a.button.lg:hover {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
-  padding-inline: var(--spacing-lg);
+  padding-inline: var(--spacing-margins);
+}
+
+.section:not(:first-child):not(:last-child) {
+  padding-top: var(--spacing-xl);
+}
+
+.section:nth-last-child(3) {
+  padding-bottom: var(--spacing-xl);
 }
 
 .container {
   width: 100%;
-  max-width: 75%;
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
   display: flex;
@@ -256,7 +265,7 @@ a.button.lg:hover {
 
 .hero {
   min-height: 60vh;
-  padding-bottom: var(--spacing-xlg);
+  padding-bottom: var(--spacing-xl);
 }
 
 .hero-grid {
@@ -266,7 +275,7 @@ a.button.lg:hover {
   grid-template-areas:
     'one one'
     'two three';
-  gap: var(--spacing-xlg) var(--spacing-lg);
+  gap: var(--spacing-xl) var(--spacing-lg);
 }
 
 .hero-title {
@@ -295,7 +304,7 @@ a.button.lg:hover {
 }
 
 .bg-wave-container {
-  margin-bottom: var(--spacing-xlg);
+  margin-bottom: var(--spacing-xl);
   height: var(--spacing-wave);
   z-index: -1;
   svg {
@@ -305,22 +314,18 @@ a.button.lg:hover {
 
 .bg-wave-container.inverse {
   margin-bottom: 0;
-  margin-top: var(--spacing-xlg);
+  margin-top: var(--spacing-xl);
   transform: rotate(180deg);
 }
 
-.tools {
-  margin-block: 1rem;
-}
-
 .toolbelt {
-  margin-inline: -2rem;
+  margin-inline: calc(-1 * var(--spacing-margins));
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: var(--spacing-md);
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
 }
 
 .tool {
@@ -372,7 +377,7 @@ a.button.lg:hover {
 }
 
 .project-info > p {
-  color: var(--color-dark-greyed);
+  color: var(--color-dark-tint);
 }
 
 .project-info > h3 {
@@ -402,8 +407,7 @@ a.button.lg:hover {
 }
 
 .contact {
-  padding-top: var(--spacing-xlg);
-  padding-bottom: var(--spacing-lg);
+  padding-block: var(--spacing-xl);
 }
 
 .contact-grid {
@@ -448,11 +452,11 @@ a.button.lg:hover {
   border-radius: var(--border-radius);
 }
 
-@media (max-width: 1400px) {
-  .container {
-    max-width: inherit;
+@media (max-width: 1360px) {
+  html {
+    --spacing-margins: 4rem;
   }
-
+  
   .contact-grid {
     grid-auto-columns: 1fr 1fr;
   }
@@ -466,16 +470,12 @@ a.button.lg:hover {
     width: 100%;
   }
 
-  .contact {
-    padding-top: var(--spacing-lg);
-  }
-
   .coffee-img {
     width: 100%;
   }
 }
 
-@media (max-width: 675px) {
+@media (max-width: 800px) {
   html {
     --fs-xl: 2.25rem;
   }
@@ -516,6 +516,10 @@ a.button.lg:hover {
     height: auto;
   }
 
+  .contact {
+    padding-top: var(--spacing-lg);
+  }
+
   .contact-grid {
     grid-template-areas:
       'one two'
@@ -523,10 +527,11 @@ a.button.lg:hover {
   }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 600px) {
   html {
     --fs-2xl: 4.25rem;
     --fs-lg-200: var(--fs-lg-100);
+    --spacing-margins: 2rem;
   }
 
   header {
