@@ -48,6 +48,7 @@ html {
   --color-light: #e5e5e5;
   --color-primary: #7d82b8;
   --color-secondary: #ef9606;
+  --color-secondary-tint: color-mix(in srgb, var(--color-secondaryy), #fff 40%);
   --color-light-tint: color-mix(in srgb, var(--color-light), #fff 10%);
   --color-dark-tint: color-mix(in srgb, var(--color-dark), #fff 10%);
   --color-primary-tint: color-mix(in srgb, var(--color-primary), #fff 45%);
@@ -182,6 +183,9 @@ a.button:visited {
 
 a.button {
   width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: var(--border-radius);
   font-weight: 500;
@@ -552,6 +556,12 @@ a.button.lg:hover {
   .hero-img {
     width: 100%;
     align-self: center;
+  }
+
+  .project-links {
+    & > a.button {
+      flex-grow: 1;
+    }
   }
 
   .contact-button {
