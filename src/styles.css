@@ -132,6 +132,10 @@ footer {
   padding-inline: var(--spacing-md);
 }
 
+p {
+  line-height: 150%;
+}
+
 h1,
 h2,
 h3,
@@ -140,20 +144,24 @@ h5,
 h6 {
   font-family: var(--font-header);
   font-weight: bold;
+  line-height: 125%;
   z-index: 1;
 }
 
 h1 {
   font-size: var(--fs-2xl);
+  letter-spacing: -2%;
   width: min-content;
 }
 
 h2 {
   font-size: var(--fs-xl);
+  letter-spacing: -1.5%;
 }
 
 h3 {
   font-size: var(--fs-lg-300);
+  letter-spacing: -1.5%;
 }
 
 em,
