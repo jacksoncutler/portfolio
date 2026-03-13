@@ -134,6 +134,7 @@ footer {
 
 p {
   line-height: 150%;
+  letter-spacing: 2%;
 }
 
 h1,
@@ -233,7 +234,7 @@ a.button.lg:hover {
 }
 
 .section {
-  padding-top: var(--spacing-md);
+  padding-top: var(--spacing-sm);
   scroll-margin-top: var(--spacing-header);
   display: flex;
   flex-direction: column;
@@ -242,11 +243,11 @@ a.button.lg:hover {
 }
 
 .section:not(:first-child):not(:last-child) {
-  padding-top: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
 }
 
 .section:nth-last-child(3) {
-  padding-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .container {
