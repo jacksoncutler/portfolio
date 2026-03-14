@@ -269,7 +269,7 @@ a.button.lg:hover {
   gap: var(--spacing-sm);
 }
 
-.navbar > a > li {
+.nav-item {
   font-weight: 500;
 }
 
