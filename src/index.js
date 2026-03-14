@@ -5,7 +5,9 @@ function createObserver() {
   const sectionList = document.querySelectorAll('.section');
   const navList = document.querySelectorAll('.nav-item');
 
-  const io = new IntersectionObserver(observerCallback, {});
+  const io = new IntersectionObserver(observerCallback, {
+    rootMargin: '-25% 0% -25% 0%',
+  });
   sectionList.forEach((sectionEl) => {
     io.observe(sectionEl);
   });
@@ -19,12 +21,12 @@ function createObserver() {
         const navEl = getNavEl(entry.target.id);
         if (navEl) navEl.classList.remove('intersecting');
       }
-      function getNavEl(sectionId) {
-        return Array.from(navList).find((navEl) => {
-          return sectionId === navEl.dataset.sectionId;
-        });
-      }
     });
+    function getNavEl(sectionId) {
+      return Array.from(navList).find((navEl) => {
+        return sectionId === navEl.dataset.sectionId;
+      });
+    }
   }
 }
 
