@@ -67,6 +67,8 @@ html {
   --spacing-svg: 12rem;
   --spacing-link-icon: 1.25rem;
   --border-radius: 0.4rem;
+
+  --transition-timing: all 0.2s ease;
 }
 
 /* THEME COLORS */
@@ -199,7 +201,7 @@ a.button {
   border-radius: var(--border-radius);
   font-weight: 500;
   color: var(--color-light);
-  transition: all 0.2s ease;
+  transition: var(--transition-timing);
 }
 
 a.button.md {
@@ -271,6 +273,13 @@ a.button.lg:hover {
 
 .nav-item {
   font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: var(--transition-timing);
+}
+
+.nav-item.intersecting {
+  color: var(--color-primary-shade);
+  border-color: var(--color-primary-tint);
 }
 
 .header-spacer {
