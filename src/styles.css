@@ -45,7 +45,7 @@ html {
   --fs-sm: 0.875rem;
 
   --color-dark: #111413;
-  --color-light: #e5e5e5;
+  --color-light: #ededed;
   --color-primary: #7d82b8;
   --color-secondary: #ef9606;
   --color-secondary-tint: color-mix(in srgb, var(--color-secondaryy), #fff 40%);
@@ -336,7 +336,7 @@ a.button.lg:hover {
 }
 
 .bg-wave-container.inverse {
-  margin-bottom: 0;
+  margin-bottom: -1px;
   margin-top: var(--spacing-xl);
   transform: rotate(180deg);
 }
@@ -579,6 +579,11 @@ a.button.lg:hover {
   .hero-img {
     width: 100%;
     align-self: center;
+  }
+
+  .tool > svg {
+    width: 75px;
+    height: 75px;
   }
 
   .project-links {
