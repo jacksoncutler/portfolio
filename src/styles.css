@@ -34,14 +34,11 @@ html {
   --font-header: 'Raleway', sans-serif, serif;
   --font-body: 'Open Sans', sans-serif, serif;
 
-  --fs-2xl: 5rem;
-  --fs-xl: 2.75rem;
-  --fs-lg-300: 2rem;
-  --fs-lg-200: 1.75rem;
-  --fs-lg-100: 1.5rem;
-  --fs-md-300: 1.125rem;
-  --fs-md-200: 1rem;
-  --fs-md-100: 0.875rem;
+  --fs-3xl: 5rem;
+  --fs-2xl: 3rem;
+  --fs-xl: 1.875rem;
+  --fs-lg: 1.25rem;
+  --fs-md: 1rem;
   --fs-sm: 0.875rem;
 
   --color-dark: #111413;
@@ -152,19 +149,23 @@ h6 {
 }
 
 h1 {
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-3xl);
   letter-spacing: -2%;
   width: min-content;
 }
 
 h2 {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-2xl);
   letter-spacing: -1.5%;
 }
 
 h3 {
-  font-size: var(--fs-lg-300);
+  font-size: var(--fs-xl);
   letter-spacing: -1.5%;
+}
+
+h4 {
+  font-size: var(--fs-lg);
 }
 
 em,
@@ -205,14 +206,15 @@ a.button {
 }
 
 a.button.md {
-  padding-block: 0.5rem;
-  padding-inline: 1.5rem;
-  font-size: var(--fs-sm);
+  padding-block: 0.675rem;
+  padding-inline: 1.875rem;
+  font-size: var(--fs-md);
 }
 
 a.button.lg {
   padding-block: 0.75rem;
   padding-inline: 2rem;
+  font-size: var(--fs-lg);
 }
 
 a.button:hover {
@@ -309,7 +311,7 @@ a.button.lg:hover {
   grid-area: two;
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: var(--fs-lg-200);
+  font-size: var(--fs-xl);
 }
 
 .hero-title,
@@ -386,23 +388,18 @@ a.button.lg:hover {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
-  font-size: var(--fs-md-200);
 }
 
 .project-info > p {
   color: var(--color-dark-tint);
 }
 
-.project-info > h3 {
-  font-size: 1.8em;
-}
-
 .project-description {
-  font-size: 1em;
+  font-size: var(--fs-md);
 }
 
 .project-tools {
-  font-size: 0.9em;
+  font-size: var(--fs-sm);
   font-weight: 300;
 }
 
@@ -440,7 +437,7 @@ a.button.lg:hover {
 }
 
 .contact-text {
-  font-size: var(--fs-md-300);
+  font-size: var(--fs-lg);
 }
 
 .contact-links {
@@ -487,7 +484,9 @@ a.button.lg:hover {
 
 @media (max-width: 800px) {
   html {
-    --fs-xl: 2.25rem;
+    --fs-3xl: 4.5rem;
+    --fs-2xl: 2.75rem;
+    --fs-xl: 1.75rem;
   }
 
   header {
@@ -541,8 +540,10 @@ a.button.lg:hover {
 
 @media (max-width: 600px) {
   html {
-    --fs-2xl: 4.25rem;
-    --fs-lg-200: var(--fs-lg-100);
+    --fs-3xl: 4.25rem;
+    --fs-2xl: 2.5rem;
+    --fs-xl: 1.675rem;
+    --fs-lg: 1.125rem;
     --spacing-margins: 2rem;
   }
 
@@ -568,7 +569,6 @@ a.button.lg:hover {
   }
 
   .hero-desc {
-    font-size: var(--fs-lg-100);
     padding-inline: var(--spacing-sm);
   }
 
@@ -594,17 +594,5 @@ a.button.lg:hover {
 
   .contact-button {
     margin-inline: auto;
-  }
-}
-
-@container (max-width: 550px) {
-  .project-info {
-    font-size: 0.925rem;
-  }
-}
-
-@container (max-width: 350px) {
-  .project-info {
-    font-size: 0.85rem;
   }
 }
