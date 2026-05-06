@@ -462,6 +462,10 @@ a.button.lg:hover {
   gap: 0.5rem;
 }
 
+.footer-link:hover {
+  text-decoration: underline;
+}
+
 .footer-img {
   height: var(--spacing-link-icon);
   border-radius: var(--border-radius);
